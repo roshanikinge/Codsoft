@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshani Kinge Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('img1.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            padding: 20px;
+            text-align: left;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        nav {
+            margin: 20px 0;
+            text-align: center;
+            font-weight:bold
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #004d4d;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        h2 {
+            color: #004d4d;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .skills-container, .hobbies-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-box, .hobby-box {
+            border: 2px solid #004d4d;
+            border-radius: 8px;
+            padding: 10px 20px;
+            text-align: center;
+            min-width: 100px;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-weight: bold;
+            color: #004d4d;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            color: #000000;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 128, 128, 0.5);
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(0, 128, 128, 1);
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(0, 100, 100, 1);
+        }
+
+        .project {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 4px solid #008080;
+        }
+
+        .project img {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Roshani Kinge</h1>
+    <p>Aspiring Web Developer</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#interests">Hobbies</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact Me</a>
+</nav>
+
+<section id="about">
+    <div style="display: flex; align-items: center;">
+        <img src="2.jpeg" alt="RK" style="width: 120px; height: 120px; border-radius: 50%; margin-right: 20px;">
+        <p>
+            Hello! I'm Roshani Kinge, and I am currently pursuing a Master's degree in Computer Science at Fergusson College.
+            I am passionate about web development, with a strong aptitude for creating engaging and user-friendly websites.
+            I hold a Bachelor's degree in Computer Science and have completed several programs to further enhance my skills in web development.
+            In my spare time, I enjoy exploring new technologies and contributing to open-source projects.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <div class="skill-box">HTML5 & CSS3</div>
+        <div class="skill-box">JavaScript & jQuery</div>
+        <div class="skill-box">Responsive Web Design</div>
+        <div class="skill-box">React.js</div>
+        <div class="skill-box">Git & GitHub</div>
+        <div class="skill-box">C Programming</div>
+        <div class="skill-box">C++ Programming</div>
+        <div class="skill-box">Java</div>
+        <div class="skill-box">Python</div>
+        <div class="skill-box">SQL</div>
+        <div class="skill-box">Bootstrap</div>
+        <div class="skill-box">RESTful APIs</div>
+    </div>
+</section>
+
+<section id="interests">
+    <h2>Hobbies & Interests</h2>
+    <div class="hobbies-container">
+        <div class="hobby-box">Exploring new technologies</div>
+        <div class="hobby-box">Playing chess and solving puzzles</div>
+        <div class="hobby-box">Traveling and photography</div>
+        <div class="hobby-box">Reading science fiction novels</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+        <h3>Dijkstra's Algorithm</h3>
+        <img src="project1.png" alt="Project Screenshot">
+        <p>This project demonstrates my implementation of Dijkstra's algorithm, which is useful for finding the shortest path from an initial node to a final node. It showcases my skills in HTML and CSS.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <p>Email: roshanikinge20@gmail.com</p>
+    <p>Phone: 9*******0</p>
+</section>
+
+<footer>
+    <p>&copy; January 07, 2025 Roshani Kinge. All rights reserved.</p>
+    <a href="https://github.com/roshanikinge">GitHub</a> | 
+    <a href="https://www.linkedin.com/in/roshani-kinge-a3a452273/">LinkedIn</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0e0e0; /* Light gray background */
+            font-family: Arial, sans-serif; /* Font style */
+        }
+        #calculator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #2c2c2c; /* Light black calculator background */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        .block {
+            width: 100%;
+            max-width: 400px; /* Max width for blocks */
+            height: 60px; /* Height for blocks */
+            text-align: right;
+            margin-bottom: 15px;
+            font-size: 28px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #444; /* Dark border for blocks */
+            background-color: #f9f9f9; /* Light block background */
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px; /* Space between buttons */
+        }
+        button {
+            padding: 20px;
+            font-size: 22px;
+            cursor: pointer;
+            border-radius: 5px; /* Rounded button corners */
+            border: none; /* No border */
+            color: white; /* Button text color */
+            background-color: #007bff; /* Blue color for all buttons */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        button.equal {
+            grid-column: span 3; /* Equal button spans three columns */
+            background-color: #dc3545; /* Red for equal button */
+        }
+
+        button.cut {
+            background-color: #ffc107; /* Yellow for cut button */
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" id="display" class="block" oninput="updateCurrentInput()" placeholder="Enter expression"> <!-- Editable input block -->
+        <input type="text" id="result" class="block" disabled> <!-- Result block -->
+        
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('-')">-</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('+')">+</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+
+            <button class="equal" onclick="calculateResult()">=</button>
+            
+            <!-- New Cut Button -->
+            <button class="cut" onclick="cutLastDigit()">Cut</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        let currentInput = '';
+        
+        function appendToDisplay(value) {
+          currentInput += value;
+          document.getElementById('display').value = currentInput;
+          document.getElementById('result').value = ''; // Clear result when new input is added
+        }
+
+        function clearDisplay() {
+          currentInput = '';
+          document.getElementById('display').value = '';
+          document.getElementById('result').value = ''; // Clear result on clear
+        }
+
+        function calculateResult() {
+          try {
+              const evaluatedResult = eval(currentInput); // Evaluate the expression
+              document.getElementById('result').value = evaluatedResult; // Display result
+          } catch (error) {
+              document.getElementById('result').value = 'Error'; // Handle errors
+          }
+        }
+
+        function cutLastDigit() {
+          currentInput = currentInput.slice(0, -1); // Remove last character
+          document.getElementById('display').value = currentInput; // Update display
+          document.getElementById('result').value = ''; // Clear result when cutting input
+        }
+
+        function updateCurrentInput() {
+          currentInput = document.getElementById('display').value; // Update current input from display
+          document.getElementById('result').value = ''; // Clear result when editing input
+        }
+    </script>
+</body>
+</html>
